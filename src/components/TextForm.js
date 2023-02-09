@@ -19,7 +19,7 @@ export default function TextForm(props) {
     
 
     return (
-        <div className='p-10 w-2/5  mx-auto items-center justify-center flex flex-col bg-white mt-20 rounded-lg shadow-xl '>
+        <div className='p-10 w-4/5  mx-auto items-center justify-center flex flex-col bg-white mt-20 rounded-lg shadow-xl '>
 
             <h1 className='text-4xl font-extrabold mb-5 text-[#363062]'>Submit Form</h1>
 
@@ -32,6 +32,3 @@ export default function TextForm(props) {
         </div>
     )
 }
-
-// TextForm.
-
