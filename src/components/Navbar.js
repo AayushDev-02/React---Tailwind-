@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 export default function Navbar(props) {
   return (
-    <nav className="bg-white border-gray-200 px-2 sm:px-4 py-1  dark:bg-[#363062]">
+    <nav className=" border-gray-200 px-2 sm:px-4 py-1  bg-[#363062] sticky top-0">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
           <a href="/" className="flex items-center">
             <span className="self-center text-3xl font-extrabold whitespace-nowrap dark:text-white">{props.title}</span>

@@ -43,7 +43,7 @@ export default function TextForm(props) {
     return (
         <div className='p-10 w-4/5  mx-auto items-center justify-center flex flex-col bg-white mt-20 rounded-lg shadow-xl '>
 
-            <h1 className='text-4xl font-extrabold mb-5 text-[#363062]'>Submit Form</h1>
+            <h1 className='text-4xl font-extrabold mb-5 text-[#363062]'>{props.title}</h1>
 
             <label htmlFor="myBox" id='myBox' className="block my-5 text-lg font-medium bg-[#E9D5CA] w-full rounded-md px-2 py-5 text-[#363062] ">{text}</label>
             <div className='flex mb-5 rounded-lg bg-[#E9D5CA] py-5 px-3 w-full space-x-4 items-center'>
