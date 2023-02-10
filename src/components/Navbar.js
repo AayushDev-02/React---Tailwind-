@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 
 export default function Navbar(props) {
   return (
-    <nav className={` border-gray-200 px-2 sm:px-4 py-1 bg-[${props.bg}] `}>
-        <div className={`container flex flex-wrap items-center justify-between mx-auto bg-[${props.bg}]`}>
+    <nav className={` border-gray-200 px-2 sm:px-4 py-1 bg-[${props.color}] `}>
+        <div className={`container flex flex-wrap items-center justify-between mx-auto bg-[${props.color}]`}>
           <a href="/" className="flex items-center">
-            <span className={`self-center text-3xl font-extrabold whitespace-nowrap text-[${props.color}]`}>{props.title}</span>
+            <span className={`self-center text-3xl font-extrabold whitespace-nowrap text-[${props.bg}]`}>{props.title}</span>
           </a>
 
 
@@ -21,18 +21,18 @@ export default function Navbar(props) {
               <li></li>
               <li>
               <div className='hidden w-1/4 md:flex space-x-5 h-full p-2 '>
-                <span className={`font-semibold text-[${props.color}] my-auto`}>Search</span>
-                <input placeholder='Search'  className={` bg-[${props.color}] rounded-2xl text-black focus:outline-none pl-2 py-1 font-thin text-xs h-7`}></input>
+                <span className={`font-semibold text-[${props.bg}] my-auto`}>Search</span>
+                <input placeholder='Search'  className={` bg-[${props.bg}] rounded-2xl text-black focus:outline-none pl-2 py-1 font-thin text-xs h-7`}></input>
             </div>
               </li>
               <li className='flex items-center justify-center'>
-                <a href="/" className={`block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-[${props.color}] md:p-0 hover:text-white`} aria-current="page">Home</a>
+                <a href="/" className={`block py-2 pl-3 pr-4  rounded md:bg-transparent text-[${props.bg}] md:p-0 hover:text-white`} aria-current="page">Home</a>
               </li>
               <li className='flex items-center justify-center'>
-                <a href="/" className={`block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:border-0 md:p-0 md:text-[${props.color}] md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent hover:text-[#E9D5CA]`}>{props.aboutText}</a>
+                <div className={`block py-2 pl-3 pr-4 rounded md:border-0 md:p-0 text-[${props.bg}]  hover:text-[#${props.color}] cursor-pointer`}>{props.aboutText}</div>
               </li>
-              <li className={`flex justify-center items-center rounded-full bg-[${props.color}] w-10 h-10 cursor-pointer`} onClick={props.enableDarkMode}>
-              <props.Heroicon className={`h-6 w-6 text-[${props.bg}]`} aria-hidden="true" />
+              <li className={`flex justify-center items-center rounded-full bg-[${props.bg}] w-10 h-10 cursor-pointer`} onClick={props.enableDarkMode}>
+              <props.Heroicon className={`h-6 w-6 text-[${props.color}]`} aria-hidden="true" />
               </li>
               
             </ul>

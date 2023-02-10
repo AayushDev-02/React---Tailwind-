@@ -32,7 +32,7 @@ const features = [
 
 
 
-export default function About() {
+export default function About(props) {
 
     const [btnText, setBtnText] = useState('Dark Mode')
 
@@ -64,14 +64,14 @@ export default function About() {
 
     return (
 
-        <div className="bg-[#363062] py-24 sm:py-32 mt-40">
+        <div className={`bg-[${props.bg}] py-24 sm:py-32 mt-20`}>
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl lg:text-center">
                     <h2 className="text-lg font-semibold leading-8 tracking-tight text-indigo-600">Deploy faster</h2>
-                    <p className="mt-2 text-3xl font-bold tracking-tight text-[#E9D5CA] sm:text-4xl">
+                    <p className={`mt-2 text-3xl font-bold tracking-tight text-[${props.color}] sm:text-4xl`}>
                         Everything you need to deploy your app
                     </p>
-                    <p className="mt-6 text-lg leading-8 text-white/30">
+                    <p className={`mt-6 text-lg leading-8 text-[${props.color}]`}>
                         Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum
                         pulvinar et feugiat blandit at. In mi viverra elit nunc.
                     </p>
@@ -80,13 +80,13 @@ export default function About() {
                     <dl className="grid max-w-xl grid-cols-1 gap-y-10 gap-x-8 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
                         {features.map((feature) => (
                             <div key={feature.name} className="relative pl-16">
-                                <dt className="text-base font-semibold leading-7 text-[#E9D5CA]">
-                                    <div className="absolute top-0 left-0 flex h-10 w-10 items-center justify-center rounded-lg bg-[#E9D5CA]">
-                                        <feature.icon className="h-6 w-6 text-[#363062]" aria-hidden="true" />
+                                <dt className={`text-base font-semibold leading-7 text-[${props.color}]`}>
+                                    <div className={`absolute top-0 left-0 flex h-10 w-10 items-center justify-center rounded-lg bg-[${props.color}]`}>
+                                        <feature.icon className={`h-6 w-6 text-[${props.bg}]`} aria-hidden="true" />
                                     </div>
                                     {feature.name}
                                 </dt>
-                                <dd className="mt-2 text-base leading-7 text-white/30">{feature.description}</dd>
+                                <dd className={`mt-2 text-base leading-7 text-[${props.color}]`}>{feature.description}</dd>
                             </div>
                         ))}
                     </dl>
