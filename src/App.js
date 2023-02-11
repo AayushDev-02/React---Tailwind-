@@ -6,14 +6,13 @@ import { useState } from 'react';
 import { MoonIcon, SunIcon } from '@heroicons/react/24/solid'
 import Alert from './components/Alert';
 import New from './components/New';
-
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link
-} from "react-router-dom";
 import Footer from './components/Footer';
+
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route,
+// } from "react-router-dom";
 
 function App() {
   const [darkMode, setdarkMode] = useState({
@@ -64,7 +63,7 @@ function App() {
 
 
   return (
-    <Router>
+    // <Router>
       <div className={`bg-[${darkMode.bgColor}]`}>
         <Navbar title="TextUtils" color={darkMode.color} Heroicon={darkMode.icon} bg={darkMode.bgColor} enableDarkMode={toggleDarkMode} />
         <Alert alert={alert} color={darkMode.color} bg={darkMode.bgColor} remove={removeAlert} />
@@ -77,18 +76,20 @@ function App() {
         </div>
         {/* <hr className={`text-[${darkMode.color} mt-10]`} /> */}
 
-        <Routes>
-          <Route exact path="/about" element={<About color={darkMode.color} bg={darkMode.bgColor} />} />
+        {/* <Routes> */}
+          {/* <Route exact path="/about" element={<About color={darkMode.color} bg={darkMode.bgColor} />} /> */}
            
-          <Route exact path="/" element={<New bg={darkMode.bgColor} />}>
-          </Route>
+          {/* <Route exact path="/" element={<New bg={darkMode.bgColor} />}> */}
+          {/* </Route> */}
 
 
-        </Routes>
 
+        {/* </Routes> */}
+        <About color={darkMode.color} bg={darkMode.bgColor} />
+        <New bg={darkMode.bgColor} />
         <Footer bg={darkMode.bgColor} color={darkMode.color} />
       </div>
-    </Router>
+    // </Router>
 
 
   );
