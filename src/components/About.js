@@ -94,7 +94,7 @@ export default function About(props) {
 
             </div>
             <div className='w-full flex p-5 mt-14 '>
-                <button className='mx-auto text-lg font-bold  text-[#363062] bg-[#E9D5CA] py-2 px-3 rounded-md ' onClick={enableDarkMode}>{btnText}</button>
+                <button className='mx-auto text-lg font-bold  text-[#363062] bg-[#E9D5CA] py-2 px-3 rounded-md  ' onClick={enableDarkMode}>{btnText}</button>
             </div>
 
             <div className='flex justify-center bg-purple-500  items-center h-52 mx-64 mt-10 rounded-lg border-2 border-[#E9D5CA]' style={myStyle}>
