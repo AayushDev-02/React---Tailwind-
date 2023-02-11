@@ -1,13 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 export default function Navbar(props) {
   return (
     <nav className={` border-gray-200 px-2 sm:px-4 py-1 bg-[${props.color}] `}>
         <div className={`container flex flex-wrap items-center justify-between mx-auto bg-[${props.color}]`}>
-          <a href="/" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <span className={`self-center text-3xl font-extrabold whitespace-nowrap text-[${props.bg}]`}>{props.title}</span>
-          </a>
+          </Link>
 
 
             
@@ -26,10 +27,10 @@ export default function Navbar(props) {
             </div>
               </li>
               <li className='flex items-center justify-center'>
-                <a href="/" className={`block py-2 pl-3 pr-4  rounded md:bg-transparent text-[${props.bg}] md:p-0 hover:text-white`} aria-current="page">Home</a>
+                <Link to="/" className={`block py-2 pl-3 pr-4  rounded md:bg-transparent text-[${props.bg}] md:p-0 hover:text-white`} aria-current="page">Home</Link>
               </li>
               <li className='flex items-center justify-center'>
-                <div className={`block py-2 pl-3 pr-4 rounded md:border-0 md:p-0 text-[${props.bg}]  hover:text-[#${props.color}] cursor-pointer`}>{props.aboutText}</div>
+                <Link to="/about" className={`block py-2 pl-3 pr-4 rounded md:border-0 md:p-0 text-[${props.bg}]  hover:text-[#${props.color}] cursor-pointer`}>{props.aboutText}</Link>
               </li>
               <li className={`flex justify-center items-center rounded-full bg-[${props.bg}] w-10 h-10 cursor-pointer`} onClick={props.enableDarkMode}>
               <props.Heroicon className={`h-6 w-6 text-[${props.color}]`} aria-hidden="true" />

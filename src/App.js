@@ -5,7 +5,15 @@ import TextForm from './components/TextForm';
 import { useState } from 'react';
 import { MoonIcon, SunIcon } from '@heroicons/react/24/solid'
 import Alert from './components/Alert';
+import New from './components/New';
 
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+import Footer from './components/Footer';
 
 function App() {
   const [darkMode, setdarkMode] = useState({
@@ -44,32 +52,45 @@ function App() {
     }, 2000);
   }
 
-  const removeAlert = () =>{
+  const removeAlert = () => {
     const x = document.querySelector('#alert-close');
     x.classList.add('invisible');
-}
-  const addAlert = () =>{
+  }
+  const addAlert = () => {
     const x = document.querySelector('#alert-close');
     x.classList.remove('invisible');
 
-}
-  
+  }
+
 
   return (
-    <div className={`bg-[${darkMode.bgColor}]`}>
-      <Navbar title="TextUtils" color={darkMode.color} Heroicon={darkMode.icon} bg={darkMode.bgColor} enableDarkMode={toggleDarkMode} />
-      <Alert alert={alert} color={darkMode.color} bg={darkMode.bgColor} remove={removeAlert}/>
-      <div className='grid grid-cols-2 m-10 py-10 '>
-        <div className='my-auto w-full font-extrabold ml-10 space-y-10'>
-          <div className={`text-7xl space-y-5  text-[${darkMode.color}]  `}><div className='text-7xl font-thin'>Learning React Js with</div><div>Aayush Yadav</div></div>
-          <button className={`w-24 p-3 bg-[${darkMode.color}]  text-[${darkMode.bgColor}] rounded-md font-bold`}><a href='https://github.com/AayushDev-02/React---Tailwind-'>Github</a></button>
+    <Router>
+      <div className={`bg-[${darkMode.bgColor}]`}>
+        <Navbar title="TextUtils" color={darkMode.color} Heroicon={darkMode.icon} bg={darkMode.bgColor} enableDarkMode={toggleDarkMode} />
+        <Alert alert={alert} color={darkMode.color} bg={darkMode.bgColor} remove={removeAlert} />
+        <div className='grid grid-cols-2 m-10 py-10 '>
+          <div className='my-auto w-full font-extrabold ml-10 space-y-10'>
+            <div className={`text-7xl space-y-5  text-[${darkMode.color}]  `}><div className='text-7xl font-thin'>Learning React Js with</div><div>Aayush Yadav</div></div>
+            <button className={`w-24 p-3 bg-[${darkMode.color}]  text-[${darkMode.bgColor}] rounded-md font-bold`}><a href='https://github.com/AayushDev-02/React---Tailwind-'>Github</a></button>
+          </div>
+          <TextForm add={addAlert} remove={removeAlert} showAlert={showAlert} title="TextUtils" />
         </div>
-        <TextForm add={addAlert} remove={removeAlert}  showAlert={showAlert} title="TextUtils" />
-      </div>
-      {/* <hr className={`text-[${darkMode.color} mt-10]`} /> */}
+        {/* <hr className={`text-[${darkMode.color} mt-10]`} /> */}
 
-      <About color={darkMode.color} bg={darkMode.bgColor} />
-    </div>
+        <Routes>
+          <Route exact path="/about" element={<About color={darkMode.color} bg={darkMode.bgColor} />} />
+           
+          <Route exact path="/" element={<New bg={darkMode.bgColor} />}>
+          </Route>
+
+
+        </Routes>
+
+        <Footer bg={darkMode.bgColor} color={darkMode.color} />
+      </div>
+    </Router>
+
+
   );
 }
 
